@@ -1,7 +1,7 @@
 [
   {
-    "city": "san jose",
-    "timestamp": "2025-12-01 17:50:51",
+    "city": "San Jose",
+    "timestamp": "2025-12-03T23:22:16.747053",
     "weather": {
       "coord": {
         "lon": -121.895,
@@ -17,30 +17,79 @@
       ],
       "base": "stations",
       "main": {
-        "temp": 10.09,
-        "feels_like": 9.24,
-        "temp_min": 8.62,
-        "temp_max": 11.19,
-        "pressure": 1019,
-        "humidity": 80,
-        "sea_level": 1019,
-        "grnd_level": 990
+        "temp": 7.94,
+        "feels_like": 6.33,
+        "temp_min": 6.85,
+        "temp_max": 10.23,
+        "pressure": 1022,
+        "humidity": 68,
+        "sea_level": 1022,
+        "grnd_level": 992
       },
       "visibility": 10000,
       "wind": {
-        "speed": 3.09,
-        "deg": 310
+        "speed": 2.57,
+        "deg": 160
       },
       "clouds": {
         "all": 20
       },
-      "dt": 1764640014,
+      "dt": 1764832939,
       "sys": {
-        "type": 2,
-        "id": 2095040,
+        "type": 1,
+        "id": 5845,
         "country": "US",
-        "sunrise": 1764601417,
-        "sunset": 1764636619
+        "sunrise": 1764774327,
+        "sunset": 1764809401
+      },
+      "timezone": -28800,
+      "id": 5392171,
+      "name": "San Jose",
+      "cod": 200
+    }
+  },
+  {
+    "city": "San Jose",
+    "timestamp": "2025-12-03T23:22:32.778971",
+    "weather": {
+      "coord": {
+        "lon": -121.895,
+        "lat": 37.3394
+      },
+      "weather": [
+        {
+          "id": 801,
+          "main": "Clouds",
+          "description": "few clouds",
+          "icon": "02n"
+        }
+      ],
+      "base": "stations",
+      "main": {
+        "temp": 7.94,
+        "feels_like": 6.33,
+        "temp_min": 6.85,
+        "temp_max": 10.23,
+        "pressure": 1022,
+        "humidity": 68,
+        "sea_level": 1022,
+        "grnd_level": 992
+      },
+      "visibility": 10000,
+      "wind": {
+        "speed": 2.57,
+        "deg": 160
+      },
+      "clouds": {
+        "all": 20
+      },
+      "dt": 1764832939,
+      "sys": {
+        "type": 1,
+        "id": 5845,
+        "country": "US",
+        "sunrise": 1764774327,
+        "sunset": 1764809401
       },
       "timezone": -28800,
       "id": 5392171,
