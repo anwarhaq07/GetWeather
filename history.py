@@ -1,6 +1,8 @@
 import json
 from datetime import datetime
 
+from databse import insert_history
+
 HISTORY_FILE = "history.json"
 
 def save_history(city, weather_data):
@@ -9,7 +11,9 @@ def save_history(city, weather_data):
        "timestamp" : datetime.now().isoformat(),
        "weather" : weather_data
    }
-
+   print("Saving History in DB.....")
+   time = entry["timestamp"]
+   insert_history(city, time, weather_data)
    try:
         #Load existing history
         with open(HISTORY_FILE, "r") as f:

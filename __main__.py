@@ -2,8 +2,11 @@
 from display import display_weather
 from history import save_history, show_history
 from weather_api import get_weather
+from databse import create_table
 
 if __name__ == "__main__":
+
+    create_table()
     while True:
         print("\n ========= Weather App ========")
         print("1. Get Weather")
