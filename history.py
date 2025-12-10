@@ -7,8 +7,11 @@ HISTORY_FILE = "history.json"
 DB_FILE = "weather.db"
 
 def format_timestamp(ts):
-    dt = datetime.fromisoformat(ts)
-    return dt.strftime("%b %d, %Y %I:%M %p")
+    try:
+        dt = datetime.fromisoformat(ts)
+        return dt.strftime("%b %d, %Y %I:%M %p")
+    except:
+        return ts
 
 def save_history(city, weather_data):
    entry = {
