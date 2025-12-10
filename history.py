@@ -1,9 +1,14 @@
+import sqlite3
 import json
 from datetime import datetime
-
 from databse import insert_history
 
 HISTORY_FILE = "history.json"
+DB_FILE = "weather.db"
+
+def format_timestamp(ts):
+    dt = datetime.fromisoformat(ts)
+    return dt.strftime("%b %d, %Y %I:%M %p")
 
 def save_history(city, weather_data):
    entry = {
@@ -30,14 +35,34 @@ def save_history(city, weather_data):
 
 def show_history():
 
-    try:
-        with open(HISTORY_FILE, "r") as f:
-            history = json.load(f)
-    except:
-        print("No history available")
+    conn = sqlite3.connect(DB_FILE)
+    cur = conn.cursor()
+
+    cur.execute("SELECT id, city, timestamp, temperature, description FROM history")
+    rows = cur.fetchall()
+    conn.close()
+
+    if not rows:
+        print("No history found.")
         return
 
-    print("\n=========== Search History ============")
-    for entry in history:
-        print(f"{entry['timestamp']} → {entry['city'].capitalize()}")
-    print()
+    print("n --------Weather Search History--------")
+    for row in rows:
+        _id, city, ts,temp, desc = row
+        formatted_ts = format_timestamp(ts)
+
+        print(f"\n{_id}, {city.title()} ({desc.title()})")
+        print(f"   Temp:{temp}°C")
+        print(f"   Time: {formatted_ts}")
+
+    # try:
+    #     with open(HISTORY_FILE, "r") as f:
+    #         history = json.load(f)
+    # except:
+    #     print("No history available")
+    #     return
+    #
+    # print("\n=========== Search History ============")
+    # for entry in history:
+    #     print(f"{entry['timestamp']} → {entry['city'].capitalize()}")
+    # print()
