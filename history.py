@@ -1,7 +1,7 @@
 import sqlite3
 import json
 from datetime import datetime
-from databse import insert_history
+from databse import clean_history, insert_history
 
 HISTORY_FILE = "history.json"
 DB_FILE = "weather.db"
@@ -35,6 +35,9 @@ def save_history(city, weather_data):
    #Save back to JSON
    with open(HISTORY_FILE, "w") as f:
        json.dump(history, f, indent=2)
+
+   #Cleanup old entries
+   clean_history(max_entries = 5)
 
 def show_history():
 
